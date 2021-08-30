@@ -1,0 +1,317 @@
+
+
+/*
+	Colors used
+	Text Color (Dark Gray): #2b2b2b; 
+	Primary Color (Purple): #357b70; 
+	Secondary Color (Orange): #e0b354; 
+*/
+
+/*
+	start define variables to be available for all elements to use it with postprocessers 
+	
+*/
+
+:root {
+	--primary-color: #357b70;
+	--secondary-color: #e0b354;
+	--dark-color: #2b2b2b; 
+	--active-link-color:#489c79 ;
+	--visited-link-color: #05676e; 
+}
+
+/*
+	end define variables to be available for all elements to use it with postprocessers 
+	
+*/
+
+
+/*
+	universal selector to all element  Set the box-sizing to border-box on all  elements.
+*/
+
+
+*{
+	box-sizing: border-box;
+}
+body {
+
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	font-size: 16xp;
+	line-height: 1.6; 
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: 700;
+	
+}
+
+h2 {
+	font-size: 24px;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 700; 
+}
+
+a {
+	color: var(--primary-color);
+
+}
+
+
+
+a:visited {
+	/*visited link*/
+	color: var(--visited-link-color);
+}
+
+a:hover, a:focus {
+	/*no underlinging when hovering over a link*/
+	text-decoration: none; 
+
+	transition-duration: 0.2s opacity;
+	
+}
+
+a:active {
+	/*selected linik*/
+	color: var(--active-link-color);
+}
+
+button, .button {
+  border: none;
+  display:inline-block;
+  font-family: inherit;
+  background-color: var(--primary-color);
+  color:white; 
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 2px solid rgba(0,0,0,0.3); 
+  transition-duration: 0.2s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus
+ {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.button__secondary {
+	background-color: var(--secondary-color);
+	color: var(--dark-color); 
+}
+
+.navigation-list__item--active {
+	text-decoration: none; 
+}
+
+.navigation__logo {
+	position: relative;
+	top: 20px;
+	left: 20px;
+	width: 200px;
+	height: 70px;
+}
+
+.profile__portrait {
+
+	width:250px;
+
+	float: left;
+	margin-right: 40px;
+	border-radius: 50%;
+	
+}
+
+/*
+align  footer and Center the footer's content.
+*/
+.page-footer {
+	clear: both;
+	display: flex; 
+	flex-direction: column;
+	text-align: center;
+}
+
+.profile {
+	width: 700px;
+	margin:0 auto;
+}
+
+/*
+Create a Flexbox layout for header bar.
+*/
+.page-header {
+	display: flex;
+	width: 100%;
+	padding: 20px; 
+}
+
+/*
+Align  profile image and  welcome text.
+
+*/
+.page-header__item {
+	flex: 0 1 200px; 
+}
+
+.page-header__item:last-child {
+	flex-grow: 1;
+	text-align:right;
+}
+
+.navigation-list {
+	list-style-type: none;
+}
+
+.navigation-list li {
+	display: inline-block;
+	margin-left: 15px;
+	
+}
+.skills {
+	list-style-type: none;
+}
+
+.skills__item  li{
+	display: inline-block;
+	margin-left: 15px;
+}
+
+.grid {
+	display: grid; 
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 20px;
+	padding: 10px;
+	
+	
+}
+
+.grid__item {
+	background-color: var(--dark-color); 
+	
+}
+
+.grid__item:last-child {
+	grid-column-start: 3;
+	grid-column-end: 3;
+	grid-row-start: 1;
+	grid-row-end: 3;
+}
+
+
+/*
+can also written 
+.grid__item:last-child {
+  grid-column: 3 / 3;
+  grid-row: 1 / 3;
+}
+
+*/
+
+/*
+start change the color of the sun in three different phases
+*/
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+.sun {
+ animation: 4s color-change infinite alternate linear;
+}
+/*
+end change the color of the sun in three different phases
+*/
+
+/*
+start moving the front cloud in horizental from 0 to 200 and stay in the same value vertical in 30 seconds
+*/
+
+@keyframes cloud-move {
+	from {
+		transform: translate(0, 50px);
+	}
+	to {
+		transform: translate(200px, 50px);
+	}
+}
+
+.cloud-front {
+	animation: 30s cloud-move infinite alternate linear; 
+}
+/*
+end moving the front cloud in horizental from 0 to 200 and stay in the same value vertical
+*/
+
+
+/*
+start moving the back cloud in horizental from 446 to 100 and stay in the same value vertical in 30 seconds
+*/
+
+@keyframes cloud-move-reverse {
+	from {
+		transform: translate (446px, 48px);
+	}
+	to {
+		transform: translate(100px, 48px);
+	}
+}
+.cloud-back {
+	animation: 34s cloud-move-reverse infinite alternate linear; 
+}
+
+/*
+end moving the back cloud in horizental from 446 to 100 and stay in the same value vertical in 30 seconds
+*/
+
+
+
+/* introduce a new media query for displays smaller than 500px
+*/
+@media all and (max-width: 500px) {
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+/* introduce a new media query for displays between 500px and 750px 
+*/
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+} 
+	
+	
+	/* shared code */
+@media all and (max-width: 750px) {
+	
+	.grid {
+		grid-gap: 10px;
+	}
+	
+	.grid__item:last-child {
+		grid-column: auto / auto; 
+		grid-row: auto / auto; 
+	}
+	
+	h1 {
+		font-size: 22px; 
+	}
+}
