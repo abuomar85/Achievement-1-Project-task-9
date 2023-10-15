@@ -35,8 +35,6 @@
 		</nav>
 	</header>
 
-
-
 	<main class="profile" >
 		<h1>Contact</h1>
 		Abdullah Alyabroude<br/>
@@ -49,38 +47,28 @@
 		<a href="mailto:abuomaralyabrode85@gmail.com">abuomaralyabrode85@gmail.com</a>
 		<br/>
 		<a href="mailto:abuomaralyabrode85@gmail.com">Contact me</a>
-
-
-
-
-
-		<!--
-		a simple form to register
-		<form action="/login-form-action" method="post">
-			<label for="email">E-mail:</label><br/>
-			<input type="email" id="email" name="user_email"></br>
-			<button type="submit">Register</button>
-
-		</form>
-
-		the form in codepen
-		https://codepen.io/abuomar85/pen/WNjgwdb
-		-->
-
-		<form action="/contact.html" method="post" id="contact-form">
-			<label class="standard-label" for="contact-email">E-mail</label><br/>
-			<input type="email" id="contact-email" required><br/>
-
-			<label class="standard-label" for="user-tel">Telephone: </label><br/>
-			<input type="tel" id="user-tel"><br/>
-			<label class="standard-label" for="user-message">Message: </label><br/>
-			<textarea required maxlength="240" id="user-message"></textarea>
-			<br/>
-			<input type="submit" value="send message">
-
-		</form>
-
 	</main>
+
+    <form id='register-form'>
+  
+		<div class='input-wrapper'>
+		  <label for='email'>E-mail</label>
+		  <input id='email'>
+		</div>
+		
+		<div class='input-wrapper'>
+		  <label for='tel'>Telephone</label>
+		  <input id='telephone' type='tel'>
+		</div>
+		
+		<div class='input-wrapper'>
+			<label for='message'>Message</label>
+			<textarea name="" id="message" cols="30" rows="10" maxlength="240" placeholder="maxlength: 240"></textarea>
+		</div>		
+		<button>Register</button>		
+	  </form>
+
+
 
 	<footer class="page-footer">
 		<p>find me on</p>
@@ -93,7 +81,7 @@
 
 
 
-
+	<script src="js/scripts.js"></script>
 	<script src="js/tota11y.min.js"></script>
 </body>
 </html>
