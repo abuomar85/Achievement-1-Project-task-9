@@ -325,6 +325,21 @@ start moving the front cloud in horizental from 0 to 200 and stay in the same va
 end moving the front cloud in horizental from 0 to 200 and stay in the same value vertical
 */
 
+/* style the form */
+.input-wrapper {
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  min-width: 75px;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+}
+
 /*
 start moving the back cloud in horizental from 446 to 100 and stay in the same value vertical in 30 seconds
 */
@@ -348,13 +363,14 @@ start moving the back cloud in horizental from 446 to 100 and stay in the same v
   }
 
   to {
-		-webkit-transform: translate(100px, 48px);
-		        transform: translate(100px, 48px);
+    -webkit-transform: translate(100px, 48px);
+	  transform: translate(100px, 48px);
 	}
 }
+
 .cloud-back {
-	-webkit-animation: 34s cloud-move-reverse infinite alternate linear;
-	        animation: 34s cloud-move-reverse infinite alternate linear;
+  -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
+  animation: 34s cloud-move-reverse infinite alternate linear;
 }
 
 /*

@@ -198,6 +198,8 @@ Align  profile image and  welcome text.
   grid-row: 1 3;
 }
 
+
+
 /*
 can also written
 .grid__item:last-child {
