@@ -226,6 +226,7 @@ I changed the color manually because it was too dark with old value #2b2b2b
 */
 .grid__item {
   background-color: #A9A9A9;
+  padding: 20px;
 }
 
 .grid__item:last-child {
